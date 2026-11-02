@@ -175,7 +175,7 @@ app.post("/api/books/:id/return", (req, res) => {
   // 2. at least one copy must be issued (availability must not exceed quantity)
   if (book.available >= book.quantity) {
     return res.status(400).json({ message: "No issued copies to return" });
- }
+  }
 
   // 3. increase availability by one
   book.available++;
